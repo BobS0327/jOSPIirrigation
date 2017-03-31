@@ -1,21 +1,21 @@
 # jOSPIirrigation
 OSPI Java app to customize station activation.  The app initially creates a database name ospidata.db.  This SQLite database contains four tables as follows:
 
-info table which contains four fields as follows:
+## info table which contains four fields as follows:
 password  -  This contains either a plaintext password or a md5hashed password.  The type of password depends on the value in the md5hash field.  If the md5hash field contains a numeric ZERO, the password is a plaintext password.  If the field contains a numeric ONE, the password is already md5hashed.
 md5hash  -  Contains numeric ZERO for plaintext password or numeric ONE for md5hashed password.
 urlport  -  the url of the Open Sprinkler Raspberry Pi.  Format example is http://192.168.1.101
 port  -  The port that is used by the Open Sprinkler Raspberry Pi.
 
-zones table which contains two fields as follows:
+## zones table which contains two fields as follows:
 idnum  -  The station id number
 lastwatered  -  Thedate and time the station id was last activated
 
-log table which contains two fields as follows:
+## log table which contains two fields as follows:
 timestamp  -  Date and time of entry
 info  -  relevant info posted to log such as successfully activated a watering station etc.
 
-programs table which contains three fields as follows:
+## programs table which contains three fields as follows:
 name  -  Self explanatory, the name of the program
 zoneseq  -  The order in which the stations (zones) are to be watered and how long each station (zone) is to be activated. For example,  zone 3 should be watered 180 seconds,  3:180.  There is a colon between the station (zone) number and number of seconds the station (zone) should be activated.  Please note that there is a comma separating each station (zone). For example, 1:30,2:45,9:30,3:180,11:15,4:90  Please accurately follow this format to ensure that the program functions properly. Also, the station (zones) do NOT have to be in sequence.  You can use any order of stations to meet you custom irrigation needs.
 last executed  -  Date and time the program was last activated (executed).

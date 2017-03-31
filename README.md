@@ -3,9 +3,13 @@ OSPI Java app to customize station activation.  The app initially creates a data
 
 ## info table 
 which contains four fields as follows:
- password  -  This contains either a plaintext password or a md5hashed password.  The type of password depends on the value in the md5hash field.  If the md5hash field contains a numeric ZERO, the password is a plaintext password.  If the field contains a numeric ONE, the password is already md5hashed.
+
+password  -  This contains either a plaintext password or a md5hashed password.  The type of password depends on the value in the md5hash field.  If the md5hash field contains a numeric ZERO, the password is a plaintext password.  If the field contains a numeric ONE, the password is already md5hashed.
+
 md5hash  -  Contains numeric ZERO for plaintext password or numeric ONE for md5hashed password.
+
 urlport  -  the url of the Open Sprinkler Raspberry Pi.  Format example is http://192.168.1.101
+
 port  -  The port that is used by the Open Sprinkler Raspberry Pi.
 
 ## zones table 
